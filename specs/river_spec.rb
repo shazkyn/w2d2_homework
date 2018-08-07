@@ -1,18 +1,25 @@
 require("minitest/autorun")
 require("minitest/rg")
 require_relative("../river.rb")
-# require_relative("../fish.rb")
+require_relative("../fish.rb")
 
 class RiverTest < Minitest::Test
 
   def setup
-     @river = River.new("Clyde")
-     # river2 = River.new("Deveron")
-  end
+     pirhana = Fish.new("Pirhana")
+     goldfish = Fish.new("Goldfish")
 
+     @river = River.new("Clyde", [ pirhana, goldfish ])
+
+  end
 
   def test_river_exists()
     assert_equal(River, @river.class)
+  end
+
+  def test_fish()
+    fish = @river.get_fish()
+    assert_equal("Pirhana", fish.name)
   end
 
 end

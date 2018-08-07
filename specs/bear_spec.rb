@@ -9,11 +9,19 @@ class Beartest < MiniTest::Test
 
   def setup
     @bear = Bear.new("Arnie", "Grizzly")
+    @fish = Fish.new("Guppy")
+    @river2 = River.new("Deveron", [@fish])
   end
 
   def test_bear()
     assert_equal("Arnie", @bear.name)
     assert_equal("Grizzly", @bear.type)
+    assert_equal([], @bear.stomach)
+  end
+
+  def test_bear_fishing()
+    @bear.go_fish(@river2)
+    assert_equal([@fish], @bear.stomach)
   end
 
 end
