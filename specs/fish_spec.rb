@@ -13,5 +13,4 @@ class FishTest < Minitest::Test
 
   end
 
-
 end

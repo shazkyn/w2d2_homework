@@ -11,4 +11,7 @@ def get_fish()
   return @fish[0]
 end
 
+def fish_count()
+  return @fish.count()
+end
 end

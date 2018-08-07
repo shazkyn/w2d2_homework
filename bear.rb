@@ -13,4 +13,12 @@ class Bear
     fish = river.fish.pop()
     @stomach.push(fish)
   end
+
+  def roar()
+    return "Grrrrr!"
+  end
+
+  def food_count()
+    return @stomach.count()
+  end
 end
